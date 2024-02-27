@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.example.weatherreport_front.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -25,10 +26,14 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class MapsFragment extends Fragment implements OnMapReadyCallback {
     public static final int FINE_LOCATION_ACCESS_REQUEST_CODE = 10001;
     private GoogleMap gMap;
+    private ImageButton settingsButton;
+    private float radius;
+    private float size;
     public Location currentLocation;
     public FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -42,16 +47,39 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.google_map);
         mapFragment.getMapAsync(this);
+
+        requireActivity().getSupportFragmentManager().setFragmentResultListener("settingsSaved", this, (requestKey, result) -> {
+            radius = result.getFloat("radius");
+            size = result.getFloat("size");
+            System.out.println("radius: " + radius + ", size: " + size);
+        });
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        settingsButton = view.findViewById(R.id.maps_settings);
+        settingsButton.setOnClickListener(v -> {
+            BottomSheetDialogFragment bottomSheetDialogFragment = new MapsSettingsFragment();
+            bottomSheetDialogFragment.show(requireActivity().getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
+
+            Bundle result = new Bundle();
+            result.putFloat("radius", radius);
+            result.putFloat("size", size);
+            requireActivity().getSupportFragmentManager().setFragmentResult("settings", result);
+        });
     }
 
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
         gMap = googleMap;
+
+        getLastLocation();
     }
 
     private void getLastLocation() {
@@ -59,7 +87,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, FINE_LOCATION_ACCESS_REQUEST_CODE);
             return;
         }
-        Task<Location> task = fusedLocationProviderClient.getLastLocation();
+        Task<Location> task =LocationServices.getFusedLocationProviderClient(requireContext()).getLastLocation();
         task.addOnSuccessListener(location -> {
             if (location != null) {
                 currentLocation = location;

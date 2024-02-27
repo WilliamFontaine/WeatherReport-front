@@ -14,4 +14,8 @@
     <string name="temperature">Température</string>
     <string name="add">Ajouter</string>
     <string name="weather_type">Type de temps</string>
+    <string name="sort_settings">Paramètres de tri</string>
+    <string name="radius">Rayon (km)</string>
+    <string name="number_of_reports">Nombre d\'observations</string>
+    <string name="search">Rechercher</string>
 </resources>
