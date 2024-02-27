@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".ui.report.ReportFragment">
+
+
+    <TextView
+        android:id="@+id/weather_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:labelFor="@+id/weather_type_radio"
+        android:text="@string/weather_type"
+        app:layout_constraintEnd_toStartOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toTopOf="@+id/weather_type_radio" />
+
+    <RadioGroup
+        android:id="@+id/weather_type_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/clear_sky"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_clear_sky" />
+
+        <RadioButton
+            android:id="@+id/few_cloud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_few_cloud" />
+
+        <RadioButton
+            android:id="@+id/partly_cloudy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_partly_cloudy" />
+
+        <RadioButton
+            android:id="@+id/overcast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_overcast" />
+
+        <RadioButton
+            android:id="@+id/fog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_fog" />
+
+        <RadioButton
+            android:id="@+id/showers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_showers" />
+
+        <RadioButton
+            android:id="@+id/rain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_rain" />
+
+        <RadioButton
+            android:id="@+id/snow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_type_snow" />
+    </RadioGroup>
+    
+    <TextView
+        android:id="@+id/temperature_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:labelFor="@+id/temperature"
+        android:text="@string/temperature"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature"
+        app:layout_constraintEnd_toStartOf="@+id/temperature"
+        app:layout_constraintTop_toTopOf="@+id/temperature" />
+
+    <EditText
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="128dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weather_type_radio"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

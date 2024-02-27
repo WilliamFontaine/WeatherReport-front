@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Raport Météo</string>
+    <string name="menu_maps">Carte</string>
+    <string name="menu_report">Ajouter une observation</string>
+    <string name="weather_type_clear_sky">Ciel bleu</string>
+    <string name="weather_type_few_cloud">Quelques nuages</string>
+    <string name="weather_type_partly_cloudy">Nuageux</string>
+    <string name="weather_type_overcast">Couvert</string>
+    <string name="weather_type_fog">Brouillard</string>
+    <string name="weather_type_showers">Averses</string>
+    <string name="weather_type_rain">Pluie</string>
+    <string name="weather_type_snow">Neige</string>
+    <string name="temperature">Température</string>
+    <string name="add">Ajouter</string>
+    <string name="weather_type">Type de temps</string>
+</resources>

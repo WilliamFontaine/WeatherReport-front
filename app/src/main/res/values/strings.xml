@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">WeatherReport-front</string>
+    <string name="app_name">Weather Report</string>
+    <string name="menu_maps">Map</string>
+    <string name="menu_report">Add a report</string>
+
+    <string name="weather_type_clear_sky">Clear sky</string>
+    <string name="weather_type_few_cloud">Few cloud</string>
+    <string name="weather_type_partly_cloudy">Partly cloudy</string>
+    <string name="weather_type_overcast">Overcast</string>
+    <string name="weather_type_fog">Fog</string>
+    <string name="weather_type_showers">Showers</string>
+    <string name="weather_type_rain">Rain</string>
+    <string name="weather_type_snow">Snow</string>
+    <string name="temperature">Temperature</string>
+    <string name="add">Add</string>
+    <string name="weather_type">Weather type</string>
+    <string name="sort_settings">Sort settings</string>
 </resources>
