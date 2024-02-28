@@ -1,5 +1,9 @@
 package com.example.weatherreport_front;
 
+import android.os.Bundle;
+import android.view.Menu;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -9,15 +13,12 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.widget.Toast;
-
 import com.example.weatherreport_front.databinding.ActivityMainBinding;
 import com.example.weatherreport_front.ui.maps.MapsFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode != MapsFragment.FINE_LOCATION_ACCESS_REQUEST_CODE) {
-            Toast.makeText(this, "The app needs location permission to work properly", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.permission_denied, Toast.LENGTH_SHORT).show();
         }
     }
 

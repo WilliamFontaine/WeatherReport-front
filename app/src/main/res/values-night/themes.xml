@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.WeatherReportfront" parent="Theme.Material3.DynamicColors.Dark">
         <!-- Customize your dark theme here. -->
@@ -6,5 +6,6 @@
     </style>
 
     <style name="Theme.WeatherReportfront" parent="Base.Theme.WeatherReportfront" />
+
     <style name="Theme.WeatherReportfront.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 </resources>

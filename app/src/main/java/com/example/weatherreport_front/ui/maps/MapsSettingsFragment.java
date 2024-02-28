@@ -8,10 +8,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.example.weatherreport_front.MainActivity;
 import com.example.weatherreport_front.R;
 import com.example.weatherreport_front.databinding.FragmentMapsSettingsBinding;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
@@ -26,10 +23,11 @@ public class MapsSettingsFragment extends BottomSheetDialogFragment {
         binding = FragmentMapsSettingsBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        view.findViewById(R.id.search).setOnClickListener(v -> {;
+        view.findViewById(R.id.search).setOnClickListener(v -> {
+            ;
             Bundle result = new Bundle();
-            result.putFloat("radius", binding.radiusSlider.getValues().get(0));
-            result.putFloat("size", binding.sizeSlider.getValues().get(0));
+            result.putInt("radius", binding.radiusSlider.getValues().get(0).intValue());
+            result.putInt("size", binding.sizeSlider.getValues().get(0).intValue());
             requireActivity().getSupportFragmentManager().setFragmentResult("settingsSaved", result);
             dismiss();
         });

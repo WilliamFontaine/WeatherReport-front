@@ -31,52 +31,52 @@
         <RadioButton
             android:id="@+id/clear_sky"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_clear_sky" />
 
         <RadioButton
             android:id="@+id/few_cloud"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_few_cloud" />
 
         <RadioButton
             android:id="@+id/partly_cloudy"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_partly_cloudy" />
 
         <RadioButton
             android:id="@+id/overcast"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_overcast" />
 
         <RadioButton
             android:id="@+id/fog"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_fog" />
 
         <RadioButton
             android:id="@+id/showers"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_showers" />
 
         <RadioButton
             android:id="@+id/rain"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_rain" />
 
         <RadioButton
             android:id="@+id/snow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:text="@string/weather_type_snow" />
     </RadioGroup>
-    
+
     <TextView
         android:id="@+id/temperature_label"
         android:layout_width="wrap_content"
@@ -90,18 +90,18 @@
 
     <EditText
         android:id="@+id/temperature"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="48dp"
         android:layout_marginStart="128dp"
         android:ems="10"
         android:inputType="numberSigned"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/search"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/weather_type_radio"
         tools:ignore="Autofill" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -109,6 +109,88 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/clear_sky_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/clear_sky"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toTopOf="@+id/weather_type_radio"
+        android:contentDescription="@string/weather_type_clear_sky" />
+
+    <ImageView
+        android:id="@+id/few_cloud_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/few_clouds"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toBottomOf="@+id/clear_sky_image"
+        android:contentDescription="@string/weather_type_few_cloud" />
+
+    <ImageView
+        android:id="@+id/partly_cloudy_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/partly_cloudy"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toBottomOf="@+id/few_cloud_image"
+        android:contentDescription="@string/weather_type_partly_cloudy" />
+
+    <ImageView
+        android:id="@+id/overcast_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/overcast"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toBottomOf="@+id/partly_cloudy_image"
+        android:contentDescription="@string/weather_type_overcast" />
+
+    <ImageView
+        android:id="@+id/fog_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/fog"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toBottomOf="@+id/overcast_image"
+        android:contentDescription="@string/weather_type_fog" />
+
+    <ImageView
+        android:id="@+id/showers_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/showers"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toBottomOf="@+id/fog_image"
+        android:contentDescription="@string/weather_type_showers" />
+
+    <ImageView
+        android:id="@+id/rain_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/rain"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toBottomOf="@+id/showers_image"
+        android:contentDescription="@string/weather_type_rain" />
+
+    <ImageView
+        android:id="@+id/snow_image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/snow"
+        app:layout_constraintStart_toEndOf="@+id/weather_type_radio"
+        app:layout_constraintTop_toBottomOf="@+id/rain_image"
+        android:contentDescription="@string/weather_type_snow" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/degree"
+        app:layout_constraintBottom_toBottomOf="@+id/temperature"
+        app:layout_constraintStart_toEndOf="@+id/temperature"
+        app:layout_constraintTop_toTopOf="@+id/temperature"
+        app:layout_constraintVertical_bias="0.482" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
